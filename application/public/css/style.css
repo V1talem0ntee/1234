@@ -47,6 +47,19 @@ main {
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
+.feedback {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.feedback.valid {
+  color: green;
+}
+
+.feedback.invalid {
+  color: red;
+}
+
 
 form input[type="text"],
 form input[type="password"],

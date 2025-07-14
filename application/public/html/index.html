@@ -3,9 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Home - CSC317 VideoApp</title>
-
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <script defer src="../js/index.js"></script> <!-- JS 文件 -->
+  <style>
+    /* 你可以放在 style.css，但这是基本示例 */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .product-card {
+      width: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+      transition: opacity 1s ease;
+    }
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+  </style>
 </head>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
 <body>
 
 <header>
@@ -15,7 +35,7 @@
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="login.html">Login</a></li>
+    <li><a href="Login.html">Login</a></li>
     <li><a href="Register.html">Register</a></li>
     <li><a href="postvideo.html">Post Video</a></li>
     <li><a href="viewpost.html">View Video</a></li>
@@ -23,26 +43,15 @@
 </nav>
 
 <main>
-  <h2>Welcome to the CSC317 VideoApp!</h2>
-
-  <section>
-    <h3> Home </h3>
-    <form>
-      <label>Username:
-        <input type="text" name="username" required>
-      </label><br><br>
-
-      <label>Password:
-        <input type="password" name="password" required>
-      </label><br><br>
-
-      <input type="submit" value="Login">
-    </form>
-  </section>
+  <h2>Product Gallery</h2>
+  <p id="photo-count">Loading products...</p>
+  <div class="gallery" id="gallery">
+    <!-- 商品卡片会被 JavaScript 动态添加 -->
+  </div>
 </main>
 
 <footer>
-   CSC 317 Video App
+  CSC 317 Video App
 </footer>
 
 </body>
