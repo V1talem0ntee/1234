@@ -1,0 +1,27 @@
+<h2>Register</h2>
+<form id="register-form">
+    <label>Username:
+        <input type="text" name="username" id="username" required>
+        <span id="username-feedback" class="feedback"></span>
+    </label><br><br>
+
+    <label>Email:
+        <input type="email" name="email" required>
+    </label><br><br>
+
+    <label>Password:
+        <input type="password" name="password" id="password" required>
+        <span id="password-feedback" class="feedback"></span>
+    </label><br><br>
+
+    <label>Confirm Password:
+        <input type="password" name="confirm_password" id="password2" required>
+        <span id="confirm-password-feedback" class="feedback"></span>
+    </label><br><br>
+
+    <label><input type="checkbox" required> I am 13 years old or older.</label><br><br>
+    <label><input type="checkbox" required> I agree to the <a href="/tos">TOS and Privacy Rules</a>.</label><br><br>
+
+    <input type="submit" value="Register">
+    <input type="submit" value="Login" onclick="location.href='/login';">
+</form>
