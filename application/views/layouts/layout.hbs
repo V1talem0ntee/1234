@@ -9,13 +9,30 @@
     {{/if}}
 </head>
 <body>
-{{> header }}
-{{> nav }}
+
+<header>
+    {{> header }}
+</header>
+
+<nav>
+    <ul>
+        {{#if user}}
+            <li>Hello, {{user.username}}</li>
+            <li><a href="/users/logout">Logout</a></li>
+        {{else}}
+            <li><a href="/login">Login</a></li>
+            <li><a href="/users/register">Register</a></li>
+        {{/if}}
+    </ul>
+</nav>
 
 <main>
     {{{body}}}
 </main>
 
-{{> footer }}
+<footer>
+    {{> footer }}
+</footer>
+
 </body>
 </html>

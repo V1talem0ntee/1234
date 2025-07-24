@@ -1,12 +1,14 @@
 <h2>Login</h2>
-<form>
-    <label>Password:
-        <input type="text" name="password" required>
-    </label><br><br>
-
+<form action="/users/login" method="POST">
     <label>Username:
         <input type="text" name="username" required>
-    </label><br><br>
+    </label>
+    <br><br>
+
+    <label>Password:
+        <input type="password" name="password" required>
+    </label>
+    <br><br>
 
     <input type="submit" value="Login">
 </form>

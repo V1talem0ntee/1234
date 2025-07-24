@@ -1,3 +1,4 @@
+//routes/index.js
 const express = require("express");
 const router = express.Router();
 
@@ -20,5 +21,6 @@ router.get("/postvideo", (req, res) => {
 router.get("/viewpost", (req, res) => {
   res.render("viewpost", { title: "View Video" });
 });
+
 
 module.exports = router;

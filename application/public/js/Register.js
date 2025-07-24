@@ -19,14 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
         messages.push(check.minLength ? "✅ At least 8 characters" : "❌ At least 8 characters");
         messages.push(check.hasUpperCase ? "✅ At least one uppercase letter" : "❌ At least one uppercase letter");
         messages.push(check.hasNumber ? "✅ At least one number" : "❌ At least one number");
-        messages.push(check.hasSpecialChar ? "✅ At least one special character (e.g. !@#$)" : "❌ A");
-
+        messages.push(check.hasSpecialChar ? "✅ At least one special character (e.g. !@#$)" : "❌ At least one special character");
 
         passwordFeedback.innerHTML = messages.join("<br>");
         passwordFeedback.className = check.isValid ? "feedback valid" : "feedback invalid";
     });
 
-    // 表单提交验证和跳转
+    // 表单提交验证
     form.addEventListener("submit", function (e) {
         const username = usernameInput.value.trim();
         const password = passwordInput.value;
@@ -36,11 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 用户名验证
         if (!/^[a-zA-Z][a-zA-Z0-9]{2,}$/.test(username)) {
-            usernameFeedback.textContent = "Only letter or number please";
+            usernameFeedback.textContent = "Only letters and numbers, start with a letter.";
             usernameFeedback.className = "feedback invalid";
             isValid = false;
         } else {
-            usernameFeedback.textContent = "your good";
+            usernameFeedback.textContent = "Looks good!";
             usernameFeedback.className = "feedback valid";
         }
 
@@ -50,22 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false;
         }
 
-        // 密码验证
+        // 密码匹配验证
         if (confirmPassword !== password) {
             confirmFeedback.textContent = "Passwords do not match";
             confirmFeedback.className = "feedback invalid";
             isValid = false;
         } else {
-            confirmFeedback.textContent = "密码匹配";
+            confirmFeedback.textContent = "Passwords match";
             confirmFeedback.className = "feedback valid";
         }
 
-        // 根据验证结果决定是否跳转
-        e.preventDefault(); // 阻止表单默认提交
-
-        if (isValid) {
-            //验证
-            window.location.href = "index.html";
+        // ❗只在无效时阻止提交
+        if (!isValid) {
+            e.preventDefault();
         }
     });
 
